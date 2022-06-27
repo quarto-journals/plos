@@ -39,7 +39,7 @@ contributes:
         - "partials/before-bib.tex"
         - "partials/biblio.tex"
       # Using some package that may require pdflatex
-      latex-engine: pdflatex
+      pdf-engine: pdflatex
     html:
       # define default configuration for the html version of your format
       number-sections: true
