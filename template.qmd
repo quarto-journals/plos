@@ -216,7 +216,7 @@ $$ {#eq-schemeP}
 
 ## Etiam eget sapien nibh
 
-Nulla mi mi, @fig-elephant venenatis sed ipsum varius, volutpat euismod diam.
+Nulla mi mi, @fig-fig1 venenatis sed ipsum varius, volutpat euismod diam.
 Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim
 rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
 at justo vitae nulla elementum commodo eu id massa. In vitae diam ac
