@@ -107,7 +107,7 @@ There are no restrictions on package use within the LaTeX files except that no p
 
 Please do not include colors or graphics in the text. Color can be used to apply background shading to table cells only.
 
-The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+The manuscript LaTeX source should be contained within a single file (do not use` \input`, `\externaldocument`, or similar commands).
 
 ::: {callout-note}
 
@@ -172,7 +172,7 @@ Below are a few tips to help format your equations and other special characters 
 
  For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
 
- When adding superscript or subscripts outside of brackets/braces, please group using `{}`.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2". 
+ When adding superscript or subscripts outside of brackets/braces, please group using `{}`.  For example, change `"[U(D,E,\gamma)]^2"` to `"{[U(D,E,\gamma)]}^2"`.  
 
  Do not use `\cal` for caligraphic font. Instead, use `\mathcal{}`
 
