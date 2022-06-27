@@ -1,0 +1,47 @@
+title: PLOS
+author: Christophe Dervieux
+version: 0.0.1
+contributes:
+  format:
+    common:
+      # define below YAML configuration common to all formats
+      execute:
+        echo: false
+      crossref:
+        fig-prefix: Fig
+        eq-prefix: Eq
+      callout-appearance: simple
+      callout-icon: false
+      # https://www.zotero.org/styles/?q=plos
+      csl: https://www.zotero.org/styles/plos-one
+    pdf:
+      keep-tex: true
+      documentclass: article
+      papersize: letter
+      fontsize: 10pt
+      has-frontmatter: false
+      toc: false
+      lof: false
+      lot: false
+      colorlinks: false
+      geometry: 
+        - top=0.85in
+        - left=2.75in
+        - footskip=0.75in
+      biblio-style: plos2015.bst
+      include-in-header: _preamble.tex
+      template-partials:
+        # Add here the partials your format is using
+        - "partials/doc-class.tex"
+        - "partials/before-body.tex"
+        - "partials/_authors.tex"
+        - "partials/title.tex"
+        - "partials/before-bib.tex"
+        - "partials/biblio.tex"
+      # Using some package that may require pdflatex
+      latex-engine: pdflatex
+    html:
+      # define default configuration for the html version of your format
+      number-sections: true
+      toc: true
+      theme: custom.scss

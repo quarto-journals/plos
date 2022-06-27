@@ -1,90 +1,384 @@
 ---
-title: "Demo aft format to use as template"
+title: "PLOS template"
 format:
-  aft-pdf:
-    keep-tex: true  
+  plos-pdf:
+    number-sections: false
+    journal:
+      # This is an identifier for the target journal: 
+      # from https://plos.org/resources/writing-center/ following submission guidelines link, the identifier is the part of the URL after https://journals.plos.org/<id>/s/submission-guidelines
+      id: plosone
+    include-in-header: |
+      % Remove comment for double spacing
+      % \usepackage{setspace} 
+      % \doublespacing
   aft-html: default
 author:
-  - name: John Doe
+  - name: Andrew N. Other
+    note: A shared note
+  - name: Fred T. Secondauthor
+    affiliations: 
+      - "Current address: Some other place, Germany"
+  - name: I. Ken Groupleader
+    email: i.k.groupleader@unknown.uu
+    phone: +123 (0)123 4445556
+    fax: +123 (0)123 4445557
+    affiliations: 
+      - id: unknown1
+        name: Department of Chemistry, Unknown University, Unknown Town
+      - id: second-uni
+        name: Department of Chemistry, Second University, Nearby Town
+    note: A shared note
+  - name: Susanne K. Laborator
+    email: s.k.laborator@bigpharma.co
+    affiliations: 
+      - Lead Discovery, BigPharma, Big Town, USA
+  - name: Kay T. Finally
     affiliations:
-      - name: Dummy org
-        department: Cool Dep
-        address: Somewhere
-        city: Magic city
-        country: best one
-        postal-code: 9999
-      - Demo Journal
-    orcid: 0000-0000-0000-0000
-    email: JD@example.org
-    url: https://example.org/
-  - name: his friend
-    affiliations:
-      - Another Affiliation
+      - ref: second-uni
+      - ref: unknown1
 abstract: |
-  This document is only a demo explaining how to use the template.
-keywords: [template, demo]
-bibliography: bibliography.bib  
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+author-summary: |
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+bibliography: bibliography.bib 
 ---
 
 ## Introduction {#sec-intro}
 
-::: callout-important
-This is a dummy example only for the purpose to use this repo as a template starter for creating new formats.  For this `article-format-template` we call our dummy article `aft`. 
-:::
+This template shows how to use PLOS template from <https://plos.org/resources/writing-center/>. Each journal have a submission guideline page, please refer to it. 
 
-This quarto extension format supports PDF and HTML outputs. `quarto-journals` is aiming at porting existing {{< latex >}} template from journals to be used with quarto. PDF format is what require the most work to fit the journals guideline, but Quarto offer a nice rendering for HTML output too. This demo format template only use basic HTML format without any customization for now.
+ - [PLOS Biology](https://journals.plos.org/plosbiology/s/submission-guidelines) 
+ - [PLOS Climate](https://journals.plos.org/climate/s/submission-guidelines)
+ - [PLOS Digital Health](https://journals.plos.org/digitalhealth/s/submission-guidelines)
+ - [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/s/submission-guidelines)
+ - [PLOS Genetics](https://journals.plos.org/plosgenetics/s/submission-guidelines)
+ - [PLOS Global Public Health](https://journals.plos.org/globalpublichealth/s/submission-guidelines)
+ - [PLOS Medicine](https://journals.plos.org/plosmedicine/s/submission-guidelines)
+ - [PLOS Neglected Tropical Diseases](https://journals.plos.org/plosntds/s/submission-guidelines)
+ - [PLOS ONE](https://journals.plos.org/plosone/s/submission-guidelines)
+ - [PLOS Pathogens](https://journals.plos.org/plospathogens/s/submission-guidelines)
+ - [PLOS Sustainability and Transformation](https://journals.plos.org/sustainabilitytransformation/s/submission-guidelines)
+ - [PLOS Water](https://journals.plos.org/water/s/submission-guidelines)
 
-Everything for the extensions is in `_extensions/quarto-journals/aft` folder. See Quarto doc for details. 
+This template file contains some guidelines and recommandation initially noted in `plos_latex_template.tex` that can be found in <https://github.com/quarto-journals/plos/blob/main/style-guide/plos_latex_template.tex>
 
-- In `partials`, you'll find the `.tex` partials that can be used and should be removed or tweaked,s
+### About journal id field
 
-- Your extension can make shortcodes and lua filters available. This document shows the effect of the one provided in the `aft` format. See Lua filter in `extensions/quarto-journals/aft`
+This is an identifier for the target journal. It can be derived from https://plos.org/resources/writing-center/ following submission guidelines link, the identifier is the part of the URL after `https://journals.plos.org/<id>/s/submission-guidelines`
 
-- `aft` format sets some defaults which are different from `pdf` or `html`, link setting links to URL in read inside PDF output. See `_extensions/quarto-journals/aft/_extension.yml`
+| Journal                               | id                          |
+|:--------------------------------------|:----------------------------|
+|PLOS Biology                           |plosbiology                  |
+|PLOS Climate                           |climate                      |
+|PLOS Digital Health                    |digitalhealth                |
+|PLOS Computational Biology             |ploscompbiol                 |
+|PLOS Genetics                          |plosgenetics                 |
+|PLOS Global Public Health              |globalpublichealth           |
+|PLOS Medicine                          |plosmedicine                 |
+|PLOS Neglected Tropical Diseases       |plosntds                     |
+|PLOS ONE                               |plosone                      |
+|PLOS Pathogens                         |plospathogens                |
+|PLOS Sustainability and Transformation |sustainabilitytransformation |
+|PLOS Water                             |water                        |
 
-Source repository for this template format can found on [Github](https://github.com/quarto-journals/article-format-template)
+Example :
 
-
-## Shortcode demo {#sec-shortcode}
-
-PDF are rendered using {{< latex >}} but it is best if one can use a Markdown syntax for cross format support.
-
-::: callout-tip
-`{{< latex >}}` is a shortcode syntax where the shortcode is included in the extensions `_extensions\quarto-journals`
-:::
-
-## Code chunk {#sec-chunks}
-
-This format hide chunks by default.
-
-```{r}
-#| prompt: true
-# Loading some data but this chunk won't be shown.
-data("quine", package = "MASS")
+```yaml
+format:
+  plos-pdf:
+    journal:
+      id: water  
 ```
 
-But you can set `echo` option to `true`
+## General guidelines
 
-```{r}
-#| echo: true
-m_pois <- glm(Days ~ (Eth + Sex + Age + Lrn)^2, data = quine, family = poisson)
-summary(m_pois)
+::: {.callout-info}
+
+## Once your paper is accepted for publication, 
+
+Do not include track change in LaTeX file and leave only the final text of your manuscript. 
+PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+Visit <https://www.ctan.org/pkg/latexdiff?lang=en> for info or contact us at <latex@plos.org>.
+
+_This should not be a problem using Quarto but still a recommandation from the journal_
+::: 
+
+There are no restrictions on package use within the LaTeX files except that no packages listed in the template may be deleted.  
+
+Please do not include colors or graphics in the text. Color can be used to apply background shading to table cells only.
+
+The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+
+::: {callout-note}
+
+Please contact <latex@plos.org> with any questions submission guidelines. For anything Quarto related, please open an issue in <https://github.com/quarto-journals/plos>. If this is related to the LaTeX template, this could also be a good idea to contact PLOS directly.
+
+:::
+
+## Figures and Tables
+
+Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+
+### Figures
+
+However, do not include graphics in your manuscript
+
+- Figures should be uploaded separately from your manuscript file. 
+- Figures generated using LaTeX should be extracted and removed from the PDF before submission. 
+- Figures containing multiple panels/subfigures must be combined into one image file before submission.
+
+For figure citations, please use "Fig" instead of "Figure". 
+
+::: {.callout-tips}
+This has been made the default in this Quarto format.
+
+```yaml
+crossref:
+  fig-title: Fig 
+```
+:::
+
+Also, place figure captions after the first paragraph in which they are cited.
+
+See PLOS figure guidelines at <https://journals.plos.org/plosone/s/figures> and in your specific journal guideline.
+
+### Tables
+
+Tables should be cell-based and may not contain:
+
+- spacing/line breaks within cells to alter layout or alignment
+- do not nest tabular environments (no tabular environments within tabular environments)
+- no graphics or colored text (cell background color/shading OK)
+
+See PLOS table guidelines at <http://journals.plos.org/plosone/s/tables> and in your specific journal guideline. 
+
+For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+
+Also, place tables after the first paragraph in which they are cited.
+
+## Equations, math symbols, subscripts, and superscripts
+
+::: {.callout-important}
+
+Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+
+:::
+
+ For inline equations, please be sure to include all portions of an equation in the math environment. For example, `x$^2$` is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
+
+ Do not include text that is not math in the math environment. For example, `CO2` should be written as `CO\textsubscript{2}` giving CO\textsubscript{2} instead of `CO$_2$`.
+
+ Please add line breaks to long display equations when possible in order to fit size of the column. 
+
+ For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+
+ When adding superscript or subscripts outside of brackets/braces, please group using `{}`.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2". 
+
+ Do not use `\cal` for caligraphic font. Instead, use `\mathcal{}`
+
+## Title and Headings
+
+Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+
+PLOS does not support heading levels beyond the 3rd, meaning no 4th level headings. Header 4 levels `####` is used for the  _Supporting information_ section
+
+## Abstract and author summary
+
+Abstract must be kept below 300 words. 
+
+Author Summary must be kept between 150 and 200 words and first person must be used. 
+
+For PLOS ONE, author summary won't be included as it is not valid for submission.
+
+::: {.callout-note}
+Following content of this document is from the LaTeX template content to demo what could be included.
+:::
+
+# Introduction
+
+Lorem ipsum dolor sit [@bib1] amet, consectetur adipiscing elit.
+Curabitur eget porta erat. Morbi consectetur est vel gravida pretium.
+Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam
+@eq-schemeP sapien tellus, commodo id velit id, eleifend
+volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel,
+pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor
+faucibus id. [@bib2] Nunc convallis sodales ante, ut ullamcorper est
+egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar,
+volutpat risus.
+
+$$
+\begin{aligned}
+\mathrm{P_Y} = \underbrace{H(Y_n) - H(Y_n|\mathbf{V}^{Y}_{n})}_{S_Y} + \underbrace{H(Y_n|\mathbf{V}^{Y}_{n})- H(Y_n|\mathbf{V}^{X,Y}_{n})}_{T_{X\rightarrow Y}}
+\end{aligned}
+$$ {#eq-schemeP}
+
+# Materials and methods 
+
+## Etiam eget sapien nibh
+
+Nulla mi mi, @fig-elephant venenatis sed ipsum varius, volutpat euismod diam.
+Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim
+rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+at justo vitae nulla elementum commodo eu id massa. In vitae diam ac
+augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus
+cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam
+massa id, cursus neque. Praesent faucibus semper libero.
+
+```{=tex}
+% Place figure captions after the first paragraph in which they are cited.
+\begin{figure}[!h]
+\caption{{\bf Bold the figure title.}
+Figure caption text here, please use this space for the figure panel descriptions instead of using subfigure commands. A: Lorem ipsum dolor sit amet. B: Consectetur adipiscing elit.}
+\label{fig1}
+\end{figure}
 ```
 
-## Text color {#sec-summary}
+# Results
 
-:::{.callout-tip}
-Our format makes applying color on inline text possibly using the `[content]{color=<name>}` syntax. Let's see an example.
+:::{.callout-note}
+Results and Discussion can be combined.
 :::
 
-Here we are using a special feature of our format which is the coloring because [pink is a **nice** color]{color=mypink}.
+Nulla mi mi, venenatis sed ipsum varius, @tab-table1 volutpat euismod diam. 
+Proin rutrum vel massa non gravida. Quisque
+tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id
+massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce
+fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis.
+Aliquam in enim semper, aliquam massa id, cursus neque. Praesent
+faucibus semper libero.
 
-## Using references {.unnumbered}
+```{=tex}
+% Place tables after the first paragraph in which they are cited.
+\begin{table}[!ht]
+\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+\centering
+\caption{
+{\bf Table caption Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam.}}
+\begin{tabular}{|l+l|l|l|l|l|l|l|}
+\hline
+\multicolumn{4}{|l|}{\bf Heading1} & \multicolumn{4}{|l|}{\bf Heading2}\\ \thickhline
+$cell1 row1$ & cell2 row 1 & cell3 row 1 & cell4 row 1 & cell5 row 1 & cell6 row 1 & cell7 row 1 & cell8 row 1\\ \hline
+$cell1 row2$ & cell2 row 2 & cell3 row 2 & cell4 row 2 & cell5 row 2 & cell6 row 2 & cell7 row 2 & cell8 row 2\\ \hline
+$cell1 row3$ & cell2 row 3 & cell3 row 3 & cell4 row 3 & cell5 row 3 & cell6 row 3 & cell7 row 3 & cell8 row 3\\ \hline
+\end{tabular}
+\begin{flushleft} Table notes Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed.
+\end{flushleft}
+\label{table1}
+\end{adjustwidth}
+\end{table}
+````
 
-I did not read this book [@CameronTrivedi2013] but it must be interesting 
+## **LOREM** and **IPSUM** nunc blandit a tortor
 
-## References {.unnumbered}
+### 3rd level heading
 
-:::{#refs}
+Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget
+sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod
+ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+Quisque augue sem, tincidunt sit amet feugiat eget, ullamcorper sed
+velit. Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Mauris commodo justo ac dui pretium imperdiet. Sed
+suscipit iaculis mi at feugiat.
 
-:::
+1.  react
+
+2.  diffuse free particles
+
+3.  increment time by dt and go to 1
+
+## Sed ac quam id nisi malesuada congue
+
+Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam. Proin
+rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo
+vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper
+tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel
+sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus
+neque. Praesent faucibus semper libero.
+
+-   First bulleted item.
+
+-   Second bulleted item.
+
+-   Third bulleted item.
+
+# Discussion
+
+Nulla mi mi, venenatis sed ipsum varius,see @tab-table1
+volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque
+tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id
+massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce
+fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis.
+Aliquam in enim semper, aliquam massa id, cursus neque. Praesent
+faucibus semper libero [@bib3].
+
+# Conclusion
+
+CO~2~ Maecenas convallis mauris sit amet sem ultrices gravida. Etiam
+eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod
+ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+Quisque augue sem, tincidunt sit amet feugiat eget, ullamcorper sed
+velit.
+
+Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Mauris commodo justo ac dui pretium imperdiet. Sed
+suscipit iaculis mi at feugiat. Ut neque ipsum, luctus id lacus ut,
+laoreet scelerisque urna. Phasellus venenatis, tortor nec vestibulum
+mattis, massa tortor interdum felis, nec pellentesque metus tortor nec
+nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed. Nam
+condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis
+dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec,
+auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum,
+libero lectus luctus est, non vulputate nisl augue at dolor. For more
+information, see .
+
+# Supporting information 
+
+#### S1 Fig.
+
+**Bold the title sentence.** Add descriptive text after the title of the
+item (optional).
+
+#### S2 Fig.
+
+**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
+gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
+ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
+consectetur pellentesque.
+
+#### S1 File.
+
+**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
+gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
+ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
+consectetur pellentesque.
+
+#### S1 Video.
+
+**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
+gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
+ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
+consectetur pellentesque.
+
+#### S1 Appendix.
+
+**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
+gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
+ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
+consectetur pellentesque.
+
+#### S1 Table.
+
+**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
+gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
+ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
+consectetur pellentesque.
+
+# Acknowledgments
+
+Cras egestas velit mauris, eu mollis turpis pellentesque sit amet.
+Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam id
+pretium nisi. Sed ac quam id nisi malesuada congue. Sed interdum aliquet
+augue, at pellentesque quam rhoncus vitae.
