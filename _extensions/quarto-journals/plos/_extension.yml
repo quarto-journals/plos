@@ -28,7 +28,7 @@ contributes:
         - top=0.85in
         - left=2.75in
         - footskip=0.75in
-      biblio-style: plos2015.bst
+      biblio-style: plos2015
       include-in-header: _preamble.tex
       template-partials:
         # Add here the partials your format is using
