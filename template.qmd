@@ -172,6 +172,10 @@ Author Summary must be kept between 150 and 200 words and first person must be u
 
 For PLOS ONE, author summary won't be included as it is not valid for submission.
 
+## References
+
+Within Quarto, `natbib` will be used with `plos2015.bst`, which expect numeric style citation. Use brackets for references, e.g `[@ref]`. 
+
 ## Quarto features limitation
 
 Some features are not working with this format in PDF:
@@ -187,13 +191,13 @@ Some features are not working with this format in PDF:
 
 # Introduction
 
-Lorem ipsum dolor sit @bib1 amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit [@bib1] amet, consectetur adipiscing elit.
 Curabitur eget porta erat. Morbi consectetur est vel gravida pretium.
 Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam
 @eq-schemeP sapien tellus, commodo id velit id, eleifend
 volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel,
 pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor
-faucibus id. @bib2 Nunc convallis sodales ante, ut ullamcorper est
+faucibus id. [@bib2] Nunc convallis sodales ante, ut ullamcorper est
 egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar,
 volutpat risus.
 
@@ -207,7 +211,7 @@ $$ {#eq-schemeP}
 
 ## Etiam eget sapien nibh
 
-Nulla mi mi, Fig~\ref{fig1} venenatis sed ipsum varius, volutpat euismod diam.
+Nulla mi mi, `Fig~\ref{fig1}`{=latex} venenatis sed ipsum varius, volutpat euismod diam.
 Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim
 rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
 at justo vitae nulla elementum commodo eu id massa. In vitae diam ac
@@ -228,12 +232,12 @@ Figure caption text here, please use this space for the figure panel description
 
 Results and Discussion can be combined.
 
-Nulla mi mi, venenatis sed ipsum varius, Table~\ref{table1} volutpat euismod diam. 
+Nulla mi mi, venenatis sed ipsum varius, `Table~\ref{table1}`{=latex} volutpat euismod diam. 
 Proin rutrum vel massa non gravida. Quisque
 tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur
 adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id
 massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce
-fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis.
+fringilla erat porttitor lectus cursus, `\nameref{S1_Video}`{=latex} vel sagittis arcu lobortis.
 Aliquam in enim semper, aliquam massa id, cursus neque. Praesent
 faucibus semper libero.
 
@@ -294,14 +298,14 @@ neque. Praesent faucibus semper libero.
 
 # Discussion
 
-Nulla mi mi, venenatis sed ipsum varius,see Table~\ref{table1}
+Nulla mi mi, venenatis sed ipsum varius,see `Table~\ref{table1}`{=latex}
 volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque
 tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur
 adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id
 massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce
 fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis.
 Aliquam in enim semper, aliquam massa id, cursus neque. Praesent
-faucibus semper libero @bib3.
+faucibus semper libero [@bib3].
 
 # Conclusion
 
@@ -321,7 +325,7 @@ condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis
 dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec,
 auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum,
 libero lectus luctus est, non vulputate nisl augue at dolor. For more
-information, see .
+information, see `\nameref{S1_Appendix}`{=latex}.
 
 # Supporting information 
 
