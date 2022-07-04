@@ -42,7 +42,7 @@ author-summary: |
 bibliography: bibliography.bib 
 ---
 
-## Introduction {#sec-intro}
+# General guidelines for this Quarto template
 
 This template shows how to use PLOS template from <https://plos.org/resources/writing-center/>. Each journal have a submission guideline page, please refer to it. 
 
@@ -59,7 +59,9 @@ This template shows how to use PLOS template from <https://plos.org/resources/wr
  - [PLOS Sustainability and Transformation](https://journals.plos.org/sustainabilitytransformation/s/submission-guidelines)
  - [PLOS Water](https://journals.plos.org/water/s/submission-guidelines)
 
-This template file contains some guidelines and recommandation initially noted in `plos_latex_template.tex` that can be found in <https://github.com/quarto-journals/plos/blob/main/style-guide/plos_latex_template.tex>
+This template file contains some guidelines and recommandation initially given in `plos_latex_template.tex` that can be found in <https://github.com/quarto-journals/plos/blob/main/style-guide/plos_latex_template.tex>
+
+## Metadata
 
 ### About journal id field
 
@@ -86,12 +88,8 @@ Example :
 format:
   plos-pdf:
     journal:
-      id: water  
+      id: water
 ```
-
-## General guidelines
-
-::: {.callout-info}
 
 ## Once your paper is accepted for publication, 
 
@@ -100,7 +98,6 @@ PLOS recommends the use of latexdiff to track changes during review, as this wil
 Visit <https://www.ctan.org/pkg/latexdiff?lang=en> for info or contact us at <latex@plos.org>.
 
 _This should not be a problem using Quarto but still a recommandation from the journal_
-::: 
 
 There are no restrictions on package use within the LaTeX files except that no packages listed in the template may be deleted.  
 
@@ -108,11 +105,7 @@ Please do not include colors or graphics in the text. Color can be used to apply
 
 The manuscript LaTeX source should be contained within a single file (do not use` \input`, `\externaldocument`, or similar commands).
 
-::: {callout-note}
-
 Please contact <latex@plos.org> with any questions submission guidelines. For anything Quarto related, please open an issue in <https://github.com/quarto-journals/plos>. If this is related to the LaTeX template, this could also be a good idea to contact PLOS directly.
-
-:::
 
 ## Figures and Tables
 
@@ -126,16 +119,14 @@ However, do not include graphics in your manuscript
 - Figures generated using LaTeX should be extracted and removed from the PDF before submission. 
 - Figures containing multiple panels/subfigures must be combined into one image file before submission.
 
-For figure citations, please use "Fig" instead of "Figure". 
+**This means that, depending on how you create your figure, a manual post processing will be required.**
 
-::: {.callout-tips}
-This has been made the default in this Quarto format.
+For figure citations, please use "Fig" instead of "Figure". This has been made the default in this Quarto format:
 
 ```yaml
 crossref:
   fig-title: Fig 
 ```
-:::
 
 Also, place figure captions after the first paragraph in which they are cited.
 
@@ -151,31 +142,23 @@ Tables should be cell-based and may not contain:
 
 See PLOS table guidelines at <http://journals.plos.org/plosone/s/tables> and in your specific journal guideline. 
 
-For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below. If you are in this case, you'll either need to manually post process the `.tex` file and recreate the PDF, or you need to include LaTeX tables directly. 
 
 Also, place tables after the first paragraph in which they are cited.
 
 ## Equations, math symbols, subscripts, and superscripts
 
-::: {.callout-important}
-
 Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
 
-:::
+*  For inline equations, please be sure to include all portions of an equation in the math environment. For example, `x$^2$` is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
 
- For inline equations, please be sure to include all portions of an equation in the math environment. For example, `x$^2$` is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
+* Do not include text that is not math in the math environment. For example, `CO2` should be written as `CO\textsubscript{2}` giving CO\textsubscript{2} instead of `CO$_2$`.
+* Please add line breaks to long display equations when possible in order to fit size of the column. 
+* For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+* When adding superscript or subscripts outside of brackets/braces, please group using `{}`.  For example, change `"[U(D,E,\gamma)]^2"` to `"{[U(D,E,\gamma)]}^2"`.  
+* Do not use `\cal` for caligraphic font. Instead, use `\mathcal{}`
 
- Do not include text that is not math in the math environment. For example, `CO2` should be written as `CO\textsubscript{2}` giving CO\textsubscript{2} instead of `CO$_2$`.
-
- Please add line breaks to long display equations when possible in order to fit size of the column. 
-
- For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
-
- When adding superscript or subscripts outside of brackets/braces, please group using `{}`.  For example, change `"[U(D,E,\gamma)]^2"` to `"{[U(D,E,\gamma)]}^2"`.  
-
- Do not use `\cal` for caligraphic font. Instead, use `\mathcal{}`
-
-## Title and Headings
+## Title and headings
 
 Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
 
@@ -189,19 +172,28 @@ Author Summary must be kept between 150 and 200 words and first person must be u
 
 For PLOS ONE, author summary won't be included as it is not valid for submission.
 
-::: {.callout-note}
-Following content of this document is from the LaTeX template content to demo what could be included.
-:::
+## Quarto features limitation
+
+Some features are not working with this format in PDF:
+
+* Callouts
+* Code highlighting customization (border left, background color)
+
+----
+
+> **Following content of this document is from the LaTeX template content to demo journal style.**
+
+----
 
 # Introduction
 
-Lorem ipsum dolor sit [@bib1] amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit @bib1 amet, consectetur adipiscing elit.
 Curabitur eget porta erat. Morbi consectetur est vel gravida pretium.
 Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam
 @eq-schemeP sapien tellus, commodo id velit id, eleifend
 volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel,
 pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor
-faucibus id. [@bib2] Nunc convallis sodales ante, ut ullamcorper est
+faucibus id. @bib2 Nunc convallis sodales ante, ut ullamcorper est
 egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar,
 volutpat risus.
 
@@ -215,7 +207,7 @@ $$ {#eq-schemeP}
 
 ## Etiam eget sapien nibh
 
-Nulla mi mi, @fig-fig1 venenatis sed ipsum varius, volutpat euismod diam.
+Nulla mi mi, Fig~\ref{fig1} venenatis sed ipsum varius, volutpat euismod diam.
 Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim
 rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
 at justo vitae nulla elementum commodo eu id massa. In vitae diam ac
@@ -234,11 +226,9 @@ Figure caption text here, please use this space for the figure panel description
 
 # Results
 
-:::{.callout-note}
 Results and Discussion can be combined.
-:::
 
-Nulla mi mi, venenatis sed ipsum varius, @tab-table1 volutpat euismod diam. 
+Nulla mi mi, venenatis sed ipsum varius, Table~\ref{table1} volutpat euismod diam. 
 Proin rutrum vel massa non gravida. Quisque
 tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur
 adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id
@@ -304,14 +294,14 @@ neque. Praesent faucibus semper libero.
 
 # Discussion
 
-Nulla mi mi, venenatis sed ipsum varius,see @tab-table1
+Nulla mi mi, venenatis sed ipsum varius,see Table~\ref{table1}
 volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque
 tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur
 adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id
 massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce
 fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis.
 Aliquam in enim semper, aliquam massa id, cursus neque. Praesent
-faucibus semper libero [@bib3].
+faucibus semper libero @bib3.
 
 # Conclusion
 
@@ -335,8 +325,7 @@ information, see .
 
 # Supporting information 
 
-#### S1 Fig.
-
+#### S1 Fig. {#supp-1}
 **Bold the title sentence.** Add descriptive text after the title of the
 item (optional).
 
