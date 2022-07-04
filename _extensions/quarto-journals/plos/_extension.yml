@@ -35,6 +35,7 @@ contributes:
         - "partials/doc-class.tex"
         - "partials/before-body.tex"
         - "partials/_authors.tex"
+        - "partials/_affiliations.tex"
         - "partials/title.tex"
         - "partials/before-bib.tex"
         - "partials/biblio.tex"

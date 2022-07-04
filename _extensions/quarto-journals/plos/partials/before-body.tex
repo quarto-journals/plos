@@ -8,20 +8,24 @@ $-- Use this template to insert the necessary pieces before any content provided
 \textbf\newline{$title$} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
 }
 \newline
-
+\\
 % Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
-$_authors.tex()$
+$by-author:_authors.tex()[, ]$
+\\
+\bigskip
+$by-affiliation:_affiliations.tex()[\\ ]$
+\bigskip
 
 % Insert additional author notes using the symbols described below. Insert symbol callouts after author names as necessary.
 % 
 % Remove or comment out the author notes below if they aren't used.
 %
 % Primary Equal Contribution Note
-\Yinyang These authors contributed equally to this work.
+\Yinyang $if(author-notes.equal-contributor)$$author-notes.equal-contributor$$else$These authors contributed equally to this work.$endif$
 
 % Additional Equal Contribution Note
 % Also use this double-dagger symbol for special authorship notes, such as senior authorship.
-\ddag These authors also contributed equally to this work.
+%\ddag These authors also contributed equally to this work.
 
 % Current address notes
 \textcurrency Current Address: Dept/Program/Center, Institution Name, City, State, Country % change symbol to "\textcurrency a" if more than one current address note
@@ -29,13 +33,17 @@ $_authors.tex()$
 % \textcurrency c Insert third current address
 
 % Deceased author note
-\dag Deceased
+\dag $if(author-notes.deceased)$$author-notes.deceased$$else$Deceased$endif$
 
 % Group/Consortium Author Note
-\textpilcrow Membership list can be found in the Acknowledgments section.
+\textpilcrow $if(author-notes.group)$$author-notes.group$$else$Membership list can be found in the Acknowledgments section.$endif$
 
 % Use the asterisk to denote corresponding authorship and provide email address in note below.
-* correspondingauthor@institute.edu
+$for(by-author)$
+$if(by-author.attributes.corresponding)$
+* $by-author.email$
+$endif$
+$endfor$
 
 \end{flushleft}
 
