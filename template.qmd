@@ -15,53 +15,53 @@ author:
   - name: Name1 Surname
     equal-contributor: true
     affiliations:
-      - ref: aff1
-      - ref: aff2
+      - ref: 1
+      - ref: 2
   - name: Name2 Surname
     equal-contributor: true
     affiliations:
-      - ref: aff2
+      - ref: 2
   - name: Name3 Surname
     affiliations:
-      - ref: aff2
-      - ref: aff3
+      - ref: 2
+      - ref: 3
     notes: |
       "Current Address: Dept/Program/Center, Institution Name, City, State, Country"
   - name: Name4 Surname
     affiliations:
-      - ref: aff2
+      - ref: 2
   - name: Name5 Surname
     affiliations:
-      - ref: aff2
+      - ref: 2
     deceased: true
   - name: Name6 Surname
     affiliations:
-      - ref: aff2
+      - ref: 2
   - name: Name7 Surname
     affiliations:
-      - ref: aff1
-      - ref: aff2
-      - ref: aff3
+      - ref: 1
+      - ref: 2
+      - ref: 3
     corresponding: true
     email: correspondingauthor@institute.edu
   - name: with the Lorem Ipsum Consortium
     group: true
-authors-note:
+author-notes:
   equal-contributor: These authors contributed equally to this work.
   deceased: Deceased
   group: Membership list can be found in the Acknowledgments sections
 affiliations:
-  - id: aff1
+  - id: 1
     name: Affiliation Dept, Institution Name
     city: City
     state: State
     country: Country
-  - id: aff2
+  - id: 2
     name: Affiliation Center, Institution Name
     city: City
     state: State
     country: Country
-  - id: aff3
+  - id: 3
     name: Affiliation Program, Institution Name
     city: City
     state: State
