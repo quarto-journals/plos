@@ -14,6 +14,8 @@ contributes:
       callout-icon: false
       # https://www.zotero.org/styles/?q=plos
       csl: https://www.zotero.org/styles/plos-one
+      filters:
+        - filter.lua
     pdf:
       keep-tex: true
       documentclass: article
