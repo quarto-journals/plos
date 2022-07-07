@@ -6,26 +6,6 @@
   "nameref"
 }
 
-function print_debug(label,obj,iter)
-  local debug_mode = true
-  obj = obj or nil
-  iter = iter or pairs
-  label = label or ""
-  label = "DEBUG (from custom-environment.lua): "..label
-  if (debug_mode) then
-      if not obj then
-          print(label.." nil")
-      elseif (type(obj) == "string") then
-          print(label.." "..obj)
-      elseif type(obj) == "table" then
-          for k,v in iter(obj) do
-              print(label.."id:"..k.. " val:"..v)
-          end
-      end
-  end
-  return nil
-end
-
 return {
   {
     Span = function(el)
