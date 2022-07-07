@@ -208,7 +208,7 @@ For PLOS ONE, author summary won't be included as it is not valid for submission
 Use this markdown syntax to create the supplementary information block with a custom block of class `.supp`
 ```markdown
 ::: {.supp}
-## SI TYPE 
+## SI TYPE {#id}
 
 First paragraph is a title sentence that will be bold. (required)
 
@@ -216,6 +216,8 @@ Optionnaly, add descriptive text after the title of the
 item. No third paragraph is allowed
 :::
 ```
+
+They need to be referenced in text using `nameref` by using this syntax `[id](.nameref)` where `ìd` will be the id used on the header.
 
 ## References
 
@@ -282,7 +284,7 @@ Proin rutrum vel massa non gravida. Quisque
 tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur
 adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id
 massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce
-fringilla erat porttitor lectus cursus, [S1_Video]{.nameref} vel sagittis arcu lobortis.
+fringilla erat porttitor lectus cursus, [s1-video]{.nameref} vel sagittis arcu lobortis.
 Aliquam in enim semper, aliquam massa id, cursus neque. Praesent
 faucibus semper libero.
 
@@ -370,7 +372,7 @@ condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis
 dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec,
 auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum,
 libero lectus luctus est, non vulputate nisl augue at dolor. For more
-information, see [S1_Appendix]{.nameref}.
+information, see [s1-appendix]{.nameref}.
 
 # Supporting information 
 
