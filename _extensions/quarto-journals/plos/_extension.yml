@@ -18,6 +18,7 @@ contributes:
         - filter.lua
     pdf:
       keep-tex: true
+      block-headings: false
       documentclass: article
       papersize: letter
       fontsize: 10pt

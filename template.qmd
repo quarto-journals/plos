@@ -203,6 +203,20 @@ Author Summary must be kept between 150 and 200 words and first person must be u
 
 For PLOS ONE, author summary won't be included as it is not valid for submission.
 
+## Supplementary information syntax
+
+Use this markdown syntax to create the supplementary information block with a custom block of class `.supp`
+```markdown
+::: {.supp}
+## SI TYPE 
+
+First paragraph is a title sentence that will be bold. (required)
+
+Optionnaly, add descriptive text after the title of the
+item. No third paragraph is allowed
+:::
+```
+
 ## References
 
 Within Quarto, `natbib` will be used with `plos2015.bst`, which expect numeric style citation. Use brackets for references, e.g `[@ref]`. 
@@ -360,44 +374,54 @@ information, see [S1_Appendix]{.nameref}.
 
 # Supporting information 
 
-#### S1 Fig. {#supp-1}
-**Bold the title sentence.** Add descriptive text after the title of the
-item (optional).
+::: {.supp}
+## S1 Fig. {#s1-fig}
 
-#### S2 Fig.
+Bold the title sentence.
 
-**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
-gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
-ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
-consectetur pellentesque.
+Add descriptive text after the title of the item (optional).
+:::
 
-#### S1 File.
+::: {.supp}
+## S2 Fig. {#s2-fig}
 
-**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
-gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
-ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
-consectetur pellentesque.
+Lorem ipsum.
 
-#### S1 Video.
+Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+:::
 
-**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
-gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
-ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
-consectetur pellentesque.
 
-#### S1 Appendix.
+::: {.supp}
+## S1 File. {#s1-file}
 
-**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
-gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
-ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
-consectetur pellentesque.
+Lorem ipsum.
 
-#### S1 Table.
+:::
 
-**Lorem ipsum.** Maecenas convallis mauris sit amet sem ultrices
-gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas
-ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus
-consectetur pellentesque.
+::: {.supp}
+
+## S1 Video. {#s1-video}
+
+Lorem ipsum.
+
+Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+:::
+
+::: {.supp}
+## S1 Appendix. {#s1-appendix}
+
+Lorem ipsum.
+
+Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+:::
+
+::: {.supp}
+## S1 Table. {#s1-table}
+
+Lorem ipsum.
+
+Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+:::
 
 # Acknowledgments
 
