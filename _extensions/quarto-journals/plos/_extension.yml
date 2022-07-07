@@ -2,7 +2,7 @@ title: PLOS
 author: Christophe Dervieux
 version: 0.0.1
 contributes:
-  format:
+  formats:
     common:
       # define below YAML configuration common to all formats
       execute:
