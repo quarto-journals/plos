@@ -1,8 +1,8 @@
-# Quarto template for the PLOS journal
+# Quarto template for the Public Library of Science (PLOS)
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-This repository contains a template for the PLOS journal
+This repository contains a template for the  Public Library of Science (PLOS) journal
 
 ## How to use ? 
 
