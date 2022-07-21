@@ -24,3 +24,13 @@ However, they all offer to download the same `plos-latex-template.zip` which res
 - `plos_latex_template.tex` is the main template file provided by the Journal, with `plot_latex_template.pdf` its rendered version.
 - `plos_latex_template-commented.tex` is a working version with comments based on how we translated the template to Quarto extension. 
 - `plos2015.bst` is the official BST file provided by the Journal
+
+## Dev Notes
+
+
+### References
+
+PLOS does not expect `natbib` or `biblatex`, but just regular `\cite`
+
+- https://tex.stackexchange.com/questions/376662/how-do-i-create-plosone-bib-references
+- https://ulriklyngs.com/post/2021/12/02/how-to-adapt-any-latex-template-for-use-with-r-markdown-in-four-steps/
