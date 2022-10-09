@@ -12,10 +12,10 @@ return {
       local contentStr = pandoc.utils.stringify(el.content)
         for i, mapping in ipairs(texMappings) do
           if #el.attr.classes == 1 and el.attr.classes:includes(mapping) then
-            if quarto.doc.isFormat("pdf") then
+            if quarto.doc.is_format("pdf") then
               return pandoc.RawInline("tex", "\\" .. mapping .. "{" .. contentStr .. "}" )
             else 
-              el.content = pandoc.Str( conentStr)
+              el.content = pandoc.Str( contentStr )
               return el
           end
         end
@@ -24,7 +24,7 @@ return {
     Div = function(div)
       -- Special treatment for supplementary material
       if (div.classes:includes("supp")) then
-        if quarto.doc.isFormat("pdf") then
+        if quarto.doc.is_format("pdf") then
           local headerNum = 0
           local header = pandoc.List()
           local labelId

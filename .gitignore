@@ -1,1 +1,6 @@
 .DS_Store
+
+/.luarc.json
+plos2015.bst
+template.pdf
+template.tex
