@@ -7,10 +7,11 @@ format:
       # This is an identifier for the target journal: 
       # from https://plos.org/resources/writing-center/ following submission guidelines link, the identifier is the part of the URL after https://journals.plos.org/<id>/s/submission-guidelines
       id: plosone
-    include-in-header: |
-      % Remove comment for double spacing
-      % \usepackage{setspace} 
-      % \doublespacing
+    include-in-header:
+      text: |
+        % Remove comment for double spacing
+        % \usepackage{setspace} 
+        % \doublespacing
 author:
   - name: Name1 Surname
     equal-contributor: true
