@@ -76,7 +76,7 @@ bibliography: bibliography.bib
 
 # General guidelines for this Quarto template
 
-This template shows how to use PLOS template from <https://plos.org/resources/writing-center/>. Each journal have a submission guideline page, please refer to it. 
+This template shows how to use PLOS template from <https://plos.org/resources/writing-center/>. Each journal has a submission guideline page; please refer to it. 
 
  - [PLOS Biology](https://journals.plos.org/plosbiology/s/submission-guidelines) 
  - [PLOS Climate](https://journals.plos.org/climate/s/submission-guidelines)
