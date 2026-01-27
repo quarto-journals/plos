@@ -20,24 +20,27 @@ $by-affiliation:_affiliations.tex()[\\ ]$
 % 
 % Remove or comment out the author notes below if they aren't used.
 %
+$if(author-notes.equal-contributor)$
 % Primary Equal Contribution Note
-\Yinyang $if(author-notes.equal-contributor)$$author-notes.equal-contributor$$else$These authors contributed equally to this work.$endif$
-
+\Yinyang $author-notes.equal-contributor$
+$endif$
 % Additional Equal Contribution Note
 % Also use this double-dagger symbol for special authorship notes, such as senior authorship.
 %\ddag These authors also contributed equally to this work.
-
+$if(author-notes.current-address)$
 % Current address notes
-\textcurrency Current Address: Dept/Program/Center, Institution Name, City, State, Country % change symbol to "\textcurrency a" if more than one current address note
+\textcurrency $author-notes.current-address$ % change symbol to "\textcurrency a" if more than one current address note
 % \textcurrency b Insert second current address 
 % \textcurrency c Insert third current address
-
+$endif$
+$if(author-notes.deceased)$
 % Deceased author note
-\dag $if(author-notes.deceased)$$author-notes.deceased$$else$Deceased$endif$
-
+\dag $author-notes.deceased$
+$endif$
+$if(author-notes.group)$
 % Group/Consortium Author Note
-\textpilcrow $if(author-notes.group)$$author-notes.group$$else$Membership list can be found in the Acknowledgments section.$endif$
-
+\textpilcrow $author-notes.group$
+$endif$
 % Use the asterisk to denote corresponding authorship and provide email address in note below.
 $for(by-author)$
 $if(by-author.attributes.corresponding)$
