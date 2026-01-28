@@ -1,0 +1,33 @@
+---
+title: "Test: Multiple Current Addresses"
+format:
+  plos-pdf:
+    journal:
+      id: plosone
+author:
+  - name: Author A
+    current-address: "Current Address: Department X, New Institution X, City X, Country X"
+    affiliations:
+      - ref: aff1
+  - name: Author B
+    current-address: "Current Address: Department Y, New Institution Y, City Y, Country Y"
+    affiliations:
+      - ref: aff2
+  - name: Author C
+    current-address: "Current Address: Department Z, New Institution Z, City Z, Country Z"
+    affiliations:
+      - ref: aff1
+affiliations:
+  - id: aff1
+    name: Institution One
+    city: City
+    country: Country
+  - id: aff2
+    name: Institution Two
+    city: City
+    country: Country
+---
+
+# Introduction
+
+This test document has three authors with different current addresses. Expected result: ONLY current address notes appear with ¤ a, ¤ b, ¤ c symbols (ALL with suffixes).

@@ -1,0 +1,14 @@
+# Generated PDFs from tests
+*.pdf
+
+# Generated LaTeX files
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+
+# Temporary extension copy
+_extensions/

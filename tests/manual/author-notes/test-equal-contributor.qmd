@@ -1,0 +1,32 @@
+---
+title: "Test: Only Equal Contributor"
+format:
+  plos-pdf:
+    journal:
+      id: plosone
+author:
+  - name: Author A
+    equal-contributor: true
+    affiliations:
+      - ref: aff1
+  - name: Author B
+    equal-contributor: true
+    affiliations:
+      - ref: aff2
+  - name: Author C
+    affiliations:
+      - ref: aff1
+affiliations:
+  - id: aff1
+    name: Institution One
+    city: City
+    country: Country
+  - id: aff2
+    name: Institution Two
+    city: City
+    country: Country
+---
+
+# Introduction
+
+This test document has two authors with equal-contributor attribute. Expected result: ONLY the equal contributor note appears with ¥ symbol.

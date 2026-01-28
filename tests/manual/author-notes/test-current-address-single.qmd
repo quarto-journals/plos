@@ -1,0 +1,31 @@
+---
+title: "Test: Single Current Address"
+format:
+  plos-pdf:
+    journal:
+      id: plosone
+author:
+  - name: Author A
+    affiliations:
+      - ref: aff1
+  - name: Author B
+    current-address: "Current Address: Department X, New Institution, New City, New Country"
+    affiliations:
+      - ref: aff2
+  - name: Author C
+    affiliations:
+      - ref: aff1
+affiliations:
+  - id: aff1
+    name: Institution One
+    city: City
+    country: Country
+  - id: aff2
+    name: Institution Two
+    city: City
+    country: Country
+---
+
+# Introduction
+
+This test document has one author with a current address. Expected result: ONLY the current address note appears with ¤ symbol (NO suffix).
