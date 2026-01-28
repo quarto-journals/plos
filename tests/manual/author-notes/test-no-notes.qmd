@@ -1,0 +1,31 @@
+---
+title: "Test: No Special Attributes"
+format:
+  plos-pdf:
+    journal:
+      id: plosone
+author:
+  - name: Author A
+    affiliations:
+      - ref: aff1
+  - name: Author B
+    affiliations:
+      - ref: aff2
+  - name: Author C
+    affiliations:
+      - ref: aff1
+      - ref: aff2
+affiliations:
+  - id: aff1
+    name: Institution One
+    city: City
+    country: Country
+  - id: aff2
+    name: Institution Two
+    city: City
+    country: Country
+---
+
+# Introduction
+
+This test document has three authors with no special attributes. Expected result: NO author note symbols in superscripts, NO note explanations below the author list.

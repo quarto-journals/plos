@@ -1,0 +1,36 @@
+---
+title: "Test: Custom Author Notes Text"
+format:
+  plos-pdf:
+    journal:
+      id: plosone
+author:
+  - name: Author A
+    equal-contributor: true
+    affiliations:
+      - ref: aff1
+  - name: Author B
+    equal-contributor: true
+    deceased: true
+    affiliations:
+      - ref: aff2
+  - name: The Research Consortium
+    group: true
+affiliations:
+  - id: aff1
+    name: Institution One
+    city: City
+    country: Country
+  - id: aff2
+    name: Institution Two
+    city: City
+    country: Country
+author-notes:
+  equal-contributor: "Custom: Both authors contributed equally"
+  deceased: "Custom: Passed away during research"
+  group: "Custom: See full consortium list in appendix"
+---
+
+# Introduction
+
+This test document has custom text for author notes. Expected result: Three notes appear with CUSTOM TEXT instead of defaults.

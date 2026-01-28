@@ -1,0 +1,29 @@
+---
+title: "Test: Only Group/Consortium"
+format:
+  plos-pdf:
+    journal:
+      id: plosone
+author:
+  - name: Author A
+    affiliations:
+      - ref: aff1
+  - name: Author B
+    affiliations:
+      - ref: aff2
+  - name: The Research Consortium
+    group: true
+affiliations:
+  - id: aff1
+    name: Institution One
+    city: City
+    country: Country
+  - id: aff2
+    name: Institution Two
+    city: City
+    country: Country
+---
+
+# Introduction
+
+This test document has one consortium/group author. Expected result: ONLY the group note appears with ¶ symbol.
