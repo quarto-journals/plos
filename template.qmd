@@ -26,8 +26,7 @@ author:
     affiliations:
       - ref: aff2
       - ref: aff3
-    notes: |
-      "Current Address: Dept/Program/Center, Institution Name, City, State, Country"
+    current-address: "Current Address: Dept A, Institution A, City, State, Country"
   - name: Name4 Surname
     affiliations:
       - ref: aff2
@@ -38,6 +37,7 @@ author:
   - name: Name6 Surname
     affiliations:
       - ref: aff2
+    current-address: "Current Address: Dept B, Institution B, City, State, Country"
   - name: Name7 Surname
     affiliations:
       - ref: aff1
