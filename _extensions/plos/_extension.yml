@@ -1,6 +1,6 @@
 title: PLOS
 author: Christophe Dervieux
-version: 0.0.2
+version: 0.0.3
 quarto-required: ">=1.2.198"
 contributes:
   formats:
