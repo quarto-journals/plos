@@ -1,0 +1,25 @@
+{
+  "PLOS PDF format setup": {
+    "prefix": "pdf",
+    "body": [
+      "format:",
+      "  plos-pdf: default"
+    ],
+    "description": "Enable the PLOS PDF format."
+  },
+  "PLOS HTML format setup": {
+    "prefix": "html",
+    "body": [
+      "format:",
+      "  plos-html: default"
+    ],
+    "description": "Enable the PLOS HTML format."
+  },
+  "PLOS render command": {
+    "prefix": "render",
+    "body": [
+      "quarto render ${1:article.qmd} --to ${2:plos-pdf}"
+    ],
+    "description": "Render a document with a PLOS output format."
+  }
+}

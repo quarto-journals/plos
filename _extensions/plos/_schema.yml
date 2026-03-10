@@ -1,0 +1,34 @@
+$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v1/extension-schema.json
+
+formats:
+  plos-pdf:
+    keep-tex:
+      type: boolean
+      description: Keep intermediate LaTeX output after PDF render.
+    geometry:
+      type: array
+      items:
+        type: string
+      description: PDF page geometry options.
+    biblio-style:
+      type: string
+      description: BibTeX style file name for references.
+    natbiboptions:
+      type: string
+      description: Options passed to natbib package.
+    callout-appearance:
+      type: string
+      description: Callout style preset in the article.
+    callout-icon:
+      type: boolean
+      description: Toggle callout icons in rendered output.
+  plos-html:
+    number-sections:
+      type: boolean
+      description: Enable section numbering in HTML output.
+    toc:
+      type: boolean
+      description: Enable table of contents in HTML output.
+    theme:
+      type: string
+      description: HTML theme or SCSS file name.
