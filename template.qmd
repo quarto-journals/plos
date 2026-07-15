@@ -308,7 +308,7 @@ $cell1 row3$ & cell2 row 3 & cell3 row 3 & cell4 row 3 & cell5 row 3 & cell6 row
 \label{table1}
 \end{adjustwidth}
 \end{table}
-````
+```
 
 ## **LOREM** and **IPSUM** nunc blandit a tortor
 
